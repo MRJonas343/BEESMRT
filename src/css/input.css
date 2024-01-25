@@ -2,4 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+
+    .backgroundGradient1{
+        background: rgb(251,63,196);
+        background: linear-gradient(90deg, rgba(251,63,196,1) 0%, rgba(248,252,70,1) 100%);
+        background-size: cover;
+    }
+    .backgroundGradient2{
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg,#4158D0 0%, #C850C0 46%, #FFCC70 100% );
+    }
+}
 
