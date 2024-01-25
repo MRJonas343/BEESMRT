@@ -2,7 +2,12 @@
 export default {
   content: ["./src/**/*.{html,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        "Principal":['"Bebas Neue"', 'sans-serif'],
+        "Secundaria":['"Roboto"', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }

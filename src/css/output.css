@@ -544,17 +544,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-screen {
   width: 100vw;
-}
-
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
 .bg-pink-500 {
@@ -564,6 +555,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.font-Principal {
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .text-5xl {
