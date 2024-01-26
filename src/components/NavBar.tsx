@@ -24,7 +24,10 @@ const NavBar = ()=> {
             <input id="btn-open-menu" type="checkbox" className="peer hidden"/>
 
             <div className="fixed inset-0 translate-x-full peer-checked:translate-x-0 transition-transform md:static  md:translate-x-0 z-40">
-                <ul className="bg-white/70 absolute inset-x-0 top-24 p-12 w-[90%] mx-auto rounded-lg h-max text-center grid gap-10 md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static">
+                <ul className="bg-white absolute inset-x-0 top-24 p-12 w-[90%] mx-auto rounded-lg h-max text-center grid gap-10 md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static">
+                    <li>
+                        <Link to='/'>Home</Link>
+                    </li>
                     <li>
                         <Link to='/LogIn'>Log In</Link>
                     </li>

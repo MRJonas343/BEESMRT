@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily:{
         "Principal":['"Bebas Neue"', 'sans-serif'],
+        "Principal2" : ['"Concert One"', 'sans-serif'],
         "Secundaria":['"Roboto"', 'sans-serif']
       },
       colors:{
