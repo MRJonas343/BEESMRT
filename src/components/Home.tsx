@@ -4,9 +4,13 @@ import Card from "./Card"
 const Home = () => { 
   return(
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
+
       <NavBar/>
-      <h1 className="text-center py-2 text-white text-3d2 font-Principal2 text-6xl from-neutral-400">BEESMRT GAMES</h1>
-      <section className="flex flex-wrap justify-center gap-8">
+      
+      <h1 className="text-center py-2 text-white text-3d2 font-Principal2 text-4xl from-neutral-400 md:text-6xl md:py-5">BEESMRT GAMES</h1>
+
+      <section className="flex flex-wrap justify-center gap-8 md:justify-items-center md:h-[80vh]">
+
         <Card
         imageSrc="src/assets/perdida-de-memoria.png"
         title="Memory Game"

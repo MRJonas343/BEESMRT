@@ -32,9 +32,6 @@ const NavBar = ()=> {
                         <Link to='/LogIn'>Log In</Link>
                     </li>
                     <li>
-                        <Link to='/SignIn'>Sign Up</Link>
-                    </li>
-                    <li>
                         <Link to='/Contact'>Contact Us</Link>
                     </li>
                     <li>
@@ -44,7 +41,7 @@ const NavBar = ()=> {
             </div>
 
             <Link to="/LogIn" className="hidden lg:block">
-                <button className="hidden lg:block w-max rounded-full text-3d">Get Started</button>
+                <button className="hidden lg:block w-max rounded-full text-3d">Upgrade</button>
             </Link>
 
         </nav>

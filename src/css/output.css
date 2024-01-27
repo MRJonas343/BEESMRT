@@ -550,11 +550,6 @@ video {
   background-size: cover;
 }
 
-.bg-Gradient2{
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg,#4158D0 0%, #C850C0 46%, #FFCC70 100% );
-}
-
 .bg-open-menu {
   background-image: url('../assets/icon-hamburger.svg');
 }
@@ -634,8 +629,24 @@ video {
   height: 100vh;
 }
 
-.h-10 {
-  height: 2.5rem;
+.max-h-28 {
+  max-height: 7rem;
+}
+
+.max-h-40 {
+  max-height: 10rem;
+}
+
+.max-h-\[35vh\] {
+  max-height: 35vh;
+}
+
+.max-h-\[36vh\] {
+  max-height: 36vh;
+}
+
+.max-h-\[37vh\] {
+  max-height: 37vh;
 }
 
 .w-1\/3 {
@@ -716,8 +727,36 @@ video {
   overflow: hidden;
 }
 
+.overflow-clip {
+  overflow: clip;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-clip {
+  text-overflow: clip;
 }
 
 .rounded-2xl {
@@ -732,30 +771,13 @@ video {
   border-radius: 0.5rem;
 }
 
-.border-solid {
-  border-style: solid;
-}
-
-.border-indigo-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(238 242 255 / var(--tw-border-opacity));
-}
-
-.bg-white\/70 {
-  background-color: rgb(255 255 255 / 0.7);
-}
-
-.bg-white\/90 {
-  background-color: rgb(255 255 255 / 0.9);
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-white\/95 {
-  background-color: rgb(255 255 255 / 0.95);
+.bg-white\/70 {
+  background-color: rgb(255 255 255 / 0.7);
 }
 
 .from-neutral-400 {
@@ -778,6 +800,10 @@ video {
 
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .py-2 {
@@ -812,24 +838,19 @@ video {
   line-height: 1;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .font-thin {
@@ -853,6 +874,20 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .peer:checked ~ .peer-checked\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -867,6 +902,14 @@ video {
     display: none;
   }
 
+  .md\:h-screen {
+    height: 100vh;
+  }
+
+  .md\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .md\:w-48 {
     width: 12rem;
   }
@@ -874,6 +917,38 @@ video {
   .md\:w-max {
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .md\:w-\[80vw\] {
+    width: 80vw;
+  }
+
+  .md\:w-60 {
+    width: 15rem;
+  }
+
+  .md\:w-20 {
+    width: 5rem;
+  }
+
+  .md\:w-32 {
+    width: 8rem;
+  }
+
+  .md\:w-2\/4 {
+    width: 50%;
+  }
+
+  .md\:w-3\/5 {
+    width: 60%;
+  }
+
+  .md\:max-w-56 {
+    max-width: 14rem;
+  }
+
+  .md\:max-w-32 {
+    max-width: 8rem;
   }
 
   .md\:translate-x-0 {
@@ -885,12 +960,58 @@ video {
     grid-auto-flow: column;
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:justify-normal {
+    justify-content: normal;
+  }
+
+  .md\:justify-items-center {
+    justify-items: center;
+  }
+
   .md\:bg-transparent {
     background-color: transparent;
   }
 
+  .md\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
   .md\:p-0 {
     padding: 0px;
+  }
+
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
