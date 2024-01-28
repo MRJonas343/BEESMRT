@@ -550,11 +550,6 @@ video {
   background-size: cover;
 }
 
-.bg-Gradient2{
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg,#4158D0 0%, #C850C0 46%, #FFCC70 100% );
-}
-
 .bg-open-menu {
   background-image: url('../assets/icon-hamburger.svg');
 }
@@ -625,6 +620,10 @@ video {
   height: 1.25rem;
 }
 
+.h-\[80vh\] {
+  height: 80vh;
+}
+
 .h-max {
   height: -moz-max-content;
   height: max-content;
@@ -632,10 +631,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-10 {
-  height: 2.5rem;
 }
 
 .w-1\/3 {
@@ -654,8 +649,8 @@ video {
   width: 1.5rem;
 }
 
-.w-\[40vw\] {
-  width: 40vw;
+.w-\[43vw\] {
+  width: 43vw;
 }
 
 .w-\[90\%\] {
@@ -671,6 +666,14 @@ video {
   width: 100vw;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
+.w-\[40vw\] {
+  width: 40vw;
+}
+
 .max-w-\[240px\] {
   max-width: 240px;
 }
@@ -682,6 +685,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -704,8 +711,16 @@ video {
   justify-content: space-between;
 }
 
+.justify-items-center {
+  justify-items: center;
+}
+
 .gap-10 {
   gap: 2.5rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-8 {
@@ -716,37 +731,28 @@ video {
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.text-clip {
+  text-overflow: clip;
 }
 
 .rounded-2xl {
   border-radius: 1rem;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
 
-.border-solid {
-  border-style: solid;
-}
-
-.border-indigo-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(238 242 255 / var(--tw-border-opacity));
-}
-
-.bg-white\/70 {
-  background-color: rgb(255 255 255 / 0.7);
-}
-
-.bg-white\/90 {
-  background-color: rgb(255 255 255 / 0.9);
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .bg-white {
@@ -754,8 +760,8 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-white\/95 {
-  background-color: rgb(255 255 255 / 0.95);
+.bg-white\/70 {
+  background-color: rgb(255 255 255 / 0.7);
 }
 
 .from-neutral-400 {
@@ -790,6 +796,21 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -802,9 +823,19 @@ video {
   font-family: "Concert One", sans-serif;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-5xl {
@@ -812,19 +843,9 @@ video {
   line-height: 1;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-6xl {
@@ -853,6 +874,52 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-125:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:bg-yellow-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+}
+
+.hover\:text-purple-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(126 34 206 / var(--tw-text-opacity));
+}
+
+.hover\:text-purple-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity));
+}
+
+.hover\:text-purple-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
 .peer:checked ~ .peer-checked\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -876,6 +943,10 @@ video {
     width: max-content;
   }
 
+  .md\:max-w-28 {
+    max-width: 7rem;
+  }
+
   .md\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -892,6 +963,26 @@ video {
   .md\:p-0 {
     padding: 0px;
   }
+
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -906,8 +997,16 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:block {
+    display: block;
+  }
+
   .xl\:w-screen {
     width: 100vw;
+  }
+
+  .xl\:max-w-48 {
+    max-width: 12rem;
   }
 
   .xl\:px-12 {
@@ -917,6 +1016,46 @@ video {
 
   .xl\:text-5xl {
     font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:flex {
+    display: flex;
+  }
+
+  .\32xl\:h-\[50vh\] {
+    height: 50vh;
+  }
+
+  .\32xl\:h-\[70vh\] {
+    height: 70vh;
+  }
+
+  .\32xl\:w-\[22vw\] {
+    width: 22vw;
+  }
+
+  .\32xl\:items-start {
+    align-items: flex-start;
+  }
+
+  .\32xl\:justify-center {
+    justify-content: center;
+  }
+
+  .\32xl\:gap-9 {
+    gap: 2.25rem;
+  }
+
+  .\32xl\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .\32xl\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
   }
 }
