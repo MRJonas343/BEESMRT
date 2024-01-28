@@ -4,13 +4,17 @@ import Card from "./Card"
 const Home = () => { 
   return(
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
+
       <NavBar/>
-      <h1 className="text-center py-2 text-white text-3d2 font-Principal2 text-6xl from-neutral-400">BEESMRT GAMES</h1>
-      <section className="flex flex-wrap justify-center gap-8">
+      
+      <h1 className="text-center py-2 text-white text-3d2 font-Principal2 text-4xl from-neutral-400 md:text-6xl md:py-5 2xl:text-8xl 2xl:py-14">BEESMRT GAMES</h1>
+
+      <section className="grid grid-cols-2 justify-items-center gap-6 h-[80vh] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-9 2xl:h-[70vh]">
+
         <Card
         imageSrc="src/assets/perdida-de-memoria.png"
         title="Memory Game"
-        text="A classic memory game, but when you find a couple of cards you will have to complete a sentence or answer a question."/>
+        text="When you find a couple of cards you will have to complete a sentence or answer a question."/>
 
         <Card
         imageSrc="src/assets/verdugo.png" 
