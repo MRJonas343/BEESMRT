@@ -4,11 +4,9 @@ import Card from "./Card"
 const Home = () => { 
   return(
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
-
       <NavBar/>
       
       <h1 className="text-center py-2 text-white text-3d2 font-Principal2 text-4xl from-neutral-400 md:text-6xl md:py-5 2xl:text-8xl 2xl:py-14">BEESMRT GAMES</h1>
-
       <section className="grid grid-cols-2 justify-items-center gap-6 h-[80vh] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-9 2xl:h-[70vh]">
 
         <Card
