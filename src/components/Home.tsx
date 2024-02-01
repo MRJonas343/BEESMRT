@@ -1,5 +1,6 @@
 import NavBar from "./NavBar"
 import Card from "./Card"
+import { Link } from "react-router-dom"
 
 const Home = () => { 
   return(
@@ -9,10 +10,12 @@ const Home = () => {
       <h1 className="text-center py-2 text-white text-3d2 font-Principal2 text-4xl from-neutral-400 md:text-6xl md:py-5 2xl:text-8xl 2xl:py-14">BEESMRT GAMES</h1>
       <section className="grid grid-cols-2 justify-items-center gap-6 h-[80vh] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-9 2xl:h-[70vh]">
 
-        <Card
-        imageSrc="src/assets/perdida-de-memoria.png"
-        title="Memory Game"
-        text="When you find a couple of cards you will have to complete a sentence or answer a question."/>
+        <Link to="/games/MemoryGame" className="flex">
+          <Card
+          imageSrc="src/assets/perdida-de-memoria.png"
+          title="Memory Game"
+          text="When you find a couple of cards you will have to complete a sentence or answer a question."/>
+        </Link>
 
         <Card
         imageSrc="src/assets/verdugo.png" 
