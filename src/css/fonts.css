@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Bebas Neue';
-    src: url('/public/fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('woff2');
+    src: url('/fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('woff2');
     /* Agrega otros formatos de fuente según sea necesario */
 }
 @font-face {
     font-family: 'Concert One';
-    src: url(/public/fonts/Concert_One/ConcertOne-Regular.ttf);
+    src: url(/fonts/Concert_One/ConcertOne-Regular.ttf);
 }
 @font-face {
     font-family: 'Roboto';
-    src: url(/public/fonts/Roboto/Roboto-Regular.ttf);
+    src: url(/fonts/Roboto/Roboto-Regular.ttf);
 }

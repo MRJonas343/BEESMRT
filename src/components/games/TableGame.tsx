@@ -1,20 +1,48 @@
-// TableGame.tsx
-import { useState, useEffect } from "react";
-import ButtonCard from "./ButtonCard";
+import React, { useState, useEffect } from "react"
+import cardItems from "./cards.json"
+import ButtonCard from "./ButtonCard"
 
-const TableGame = () => {
-  const initialOrder = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12];
+interface Card {
+  id: number
+  src: string
+  matched: boolean
+}
 
-  const [currentOrder, setCurrentOrder] = useState<number[]>([]);
-  const [currentResult, setCurrentResult] = useState<number | null>(null);
+const TableGame: React.FC = () => {
+  const [cards, setCards] = useState<Card[]>([])
+  const [card1, setCard1] = useState<Card | null>(null)
+  const [card2, setCard2] = useState<Card | null>(null)
+
+  const chooseCard = (card: Card) => {
+    card1 ? setCard2(card) : setCard1(card)
+  };
+
+  const initGame = () => {
+    const allCards = [...cardItems, ...cardItems]
+      .map((item, index) => ({ ...item, id: index }))
+      .sort(() => Math.random() - 0.5)
+    setCards(allCards)
+  };
 
   useEffect(() => {
-    setCurrentOrder(initialOrder.sort(() => Math.random() - 0.5));
-  }, []); // Se ejecuta solo una vez al montar el componente
+    initGame()
+  }, [])
 
-  function uncover(id: number) {
-    setCurrentResult(id);
-  }
+  useEffect(() => {
+    if (card1 && card2) {
+      if (card1.src === card2.src) {
+        setCards((prevCards) =>
+          prevCards.map((item) =>
+            item.src === card1.src ? { ...item, matched: true } : item
+          )
+        );
+      }
+      setTimeout(() => {
+        setCard1(null)
+        setCard2(null)
+      }, 1500);
+    }
+  }, [card1, card2])
 
   return (
     <div>
@@ -23,17 +51,19 @@ const TableGame = () => {
       </h1>
 
       <section className="grid grid-cols-4 bg-white/40 p-5 mx-5 justify-items-center rounded-xl gap-4 md:grid-cols-6 xl:p-10">
-        {currentOrder.map((num, index) => (
-          <ButtonCard 
-            key={index} 
-            idButton={index} 
-            imgSrc={`/src/components/games/img/${currentResult === index ? num : "back"}.png`} uncover={uncover} />
+        {cards.map((card) => (
+          <ButtonCard
+            key={card.id}
+            card={card}
+            chooseCard={chooseCard}
+            flipped={card === card1 || card === card2 || card.matched}
+          />
         ))}
       </section>
     </div>
   );
 };
 
-export default TableGame;
+export default TableGame
 
 
