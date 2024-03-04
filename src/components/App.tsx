@@ -4,7 +4,7 @@ import LogIn from "./LogIn"
 import SignIn from "./SignIn"
 import Contact from './Contact'
 import About from './About'
-import MemoryGame from './games/MemoryGame'
+import TableGame from './games/TableGame'
 
 const App = ()=> {
     return (
@@ -15,7 +15,7 @@ const App = ()=> {
                 <Route path="/SignIn"Component={SignIn}/>
                 <Route path="/Contact"Component={Contact}/>
                 <Route path="/About"Component={About}/>
-                <Route path="/games/MemoryGame" Component={MemoryGame}/>
+                <Route path="/games/TableGame/" Component={TableGame}/>
             </Routes>
         </BrowserRouter>
     )
