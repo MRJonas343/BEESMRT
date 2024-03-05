@@ -43,5 +43,8 @@
     .card.matched{
         transform: rotateY(180deg);
     }
+    .fixPosition {
+        transform: translate(-50%, -50%);
+      }
 }
 
