@@ -4,6 +4,10 @@ import ButtonCard from "./ButtonCard"
 import Stats from "./Stats"
 import NavBar from "../NavBar"
 import Modal from "./Modal"
+import ModalMessage from "./ModalMessage"
+import confetti from  'canvas-confetti'
+
+//*Objetos obtenidos del JSON
 interface Card {
   id: number
   src: string
@@ -12,8 +16,18 @@ interface Card {
   correctAnswer : string
   incorrectAnswers : any
 }
-
+  
 const TableGame: React.FC = () => {
+
+  var duration = 15 * 1000;
+  var animationEnd = Date.now() + duration;
+  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+  
+  function randomInRange(min : any, max : any) {
+    return Math.random() * (max - min) + min;
+  }
+  
+  //*Estados del juego
   const [cards, setCards] = useState<Card[]>([])
   const [card1, setCard1] = useState<Card | null>(null)
   const [card2, setCard2] = useState<Card | null>(null)
@@ -22,43 +36,119 @@ const TableGame: React.FC = () => {
   const [player2Points, setPlayer2Points] = useState(0)
   const [resetGame, setResetGame] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [isModalWinOpen, setModalWinOpen] = useState(false)
   
   
-  //State para las preguntas
+  //*Estados para las modales !No cambiar a cons
   let [question, setQuestion] = useState("")
   let [imageSrc, setImageSrc] = useState("")
   let [correctAnswer, setCorrectAnswer] = useState("")
   let [incorrectAnswer1, setIncorrectAnswer1] = useState("")
   let [incorrectAnswer2, setIncorrectAnswer2] = useState("")
   let [incorrectAnswer3, setIncorrectAnswer3] = useState("")
+  let [mainMessage, setMainMessage] = useState("")
+  let [message, setMessage] = useState("")
+  let [imageMessage, setImageMessage] = useState("")
 
+  //*Efectos
+  useEffect(() => {
+    initGame()
+  }, [])
 
-  function openModal(){
-    setShowModal(!showModal)
-  }
-
-  function handleSubmit(e : any){
-    e.preventDefault()
-    //obtener los radios
-    const Form = new FormData(e.target)
-    let answer =  Form.get('Answer')
-    //correctAnswer
-    if(correctAnswer === answer){
-      if(isPlayer1Active){
-        setPlayer1Points( player1Points + 1)
-      }else{
-        setPlayer2Points(player2Points + 1)
-      } 
-    }else{
-      console.log(imageSrc)
-      
-      setCards((prevCards) =>
+  useEffect(() => {
+    if (card1 && card2) {
+      if (card1.src === card2.src) {
+        setCards((prevCards) =>
           prevCards.map((item) =>
-            item.src === imageSrc ? { ...item, matched: false } : item
+            item.src === card1.src ? { ...item, matched: true } : item
           )
         )
-      
+        question = card1.question
+        imageSrc = card1.src
+        correctAnswer = card1.correctAnswer
+        incorrectAnswer1 = card1.incorrectAnswers[0]
+        incorrectAnswer2 = card1.incorrectAnswers[1]
+        incorrectAnswer3 = card1.incorrectAnswers[2]
+        setQuestion(question)
+        setImageSrc(imageSrc)
+        setCorrectAnswer(correctAnswer)
+        setIncorrectAnswer1(incorrectAnswer1)
+        setIncorrectAnswer2(incorrectAnswer2)
+        setIncorrectAnswer3(incorrectAnswer3)
+        openModal()
+      } else {
+        setTimeout(()=>{
+          setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active) // Cambiar el turno
+        }, 1500) 
+      }
+      setTimeout(() => {
+        setCard1(null)
+        setCard2(null) 
+      }, 1500);
     }
+    if(player1Points + player2Points === 12){
+      if(player1Points > player2Points){
+        mainMessage = "Victory"
+        message = "Player 1 has won!!!"
+        imageMessage = "/src/components/games/img/trofeo.png"
+        setMainMessage(mainMessage)
+        setMessage(message)
+        setImageMessage(imageMessage)
+        shoModalWin()
+        
+        let interval = setInterval(function() {
+          let timeLeft = animationEnd - Date.now()
+          if (timeLeft <= 0) {
+            return clearInterval(interval)
+          }
+          let particleCount = 50 * (timeLeft / duration);
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } })
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } })
+        }, 250)
+
+        
+      }else if(player1Points < player2Points){
+        mainMessage = "Victory"
+        message = "Player 2 has won!!!"
+        imageMessage = "/src/components/games/img/trofeo.png"
+        setMainMessage(mainMessage)
+        setMessage(message)
+        setImageMessage(imageMessage)
+        shoModalWin()
+        var interval = setInterval(function() {
+          var timeLeft = animationEnd - Date.now();
+        
+          if (timeLeft <= 0) {
+            return clearInterval(interval);
+          }
+        
+          var particleCount = 50 * (timeLeft / duration);
+          // since particles fall down, start a bit higher than random
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+        }, 250);
+      }else{
+        mainMessage = "Tiee!!!"
+        message = "Good match"
+        imageMessage = "/src/components/games/img/espadas.png"
+        setMainMessage(mainMessage)
+        setMessage(message)
+        setImageMessage(imageMessage)
+        let interval = setInterval(function() {
+          let timeLeft = animationEnd - Date.now()
+          if (timeLeft <= 0) {
+            return clearInterval(interval)
+          }
+          let particleCount = 50 * (timeLeft / duration);
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } })
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } })
+        }, 250)
+      }      
+    }
+  }, [card1, card2])
+
+  //*Funciones
+  const openModal = () => {
     setShowModal(!showModal)
   }
 
@@ -73,11 +163,11 @@ const TableGame: React.FC = () => {
     setCards(allCards)
   }
 
-  useEffect(() => {
-    initGame()
-  }, [])
+  const shoModalWin = () =>{
+    setModalWinOpen(!isModalWinOpen)
+  }
 
-  function playAgain(){
+  const playAgain = () => {
     setResetGame(!resetGame)
     setPlayer1Points(0)
     setPlayer2Points(0)
@@ -85,53 +175,36 @@ const TableGame: React.FC = () => {
     setCard2(null)
     setIsPlayer1Active(true)
     initGame()
+    if (isModalWinOpen){
+      setModalWinOpen(!isModalWinOpen)
+    }
   }
 
-  useEffect(() => {
-    if (card1 && card2) {
-      if (card1.src === card2.src) {
-
-
-        setCards((prevCards) =>
+  const handleSubmit =(e : any) =>{
+    e.preventDefault()
+    //obtener los radios
+    const Form = new FormData(e.target)
+    let answer =  Form.get('Answer')
+    //correctAnswer
+    if(correctAnswer === answer){
+      if(isPlayer1Active){
+        setPlayer1Points( player1Points + 1)
+      }else{
+        setPlayer2Points(player2Points + 1)
+      } 
+    } else {
+      setCards((prevCards) =>
           prevCards.map((item) =>
-            item.src === card1.src ? { ...item, matched: true } : item
+            item.src === imageSrc ? { ...item, matched: false } : item
           )
         )
-
-        question = card1.question
-        imageSrc = card1.src
-        correctAnswer = card1.correctAnswer
-        incorrectAnswer1 = card1.incorrectAnswers[0]
-        incorrectAnswer2 = card1.incorrectAnswers[1]
-        incorrectAnswer3 = card1.incorrectAnswers[2]
-        setQuestion(question)
-        setImageSrc(imageSrc)
-        setCorrectAnswer(correctAnswer)
-        setIncorrectAnswer1(incorrectAnswer1)
-        setIncorrectAnswer2(incorrectAnswer2)
-        setIncorrectAnswer3(incorrectAnswer3)
-        openModal()
-    
-      } else {
-        setTimeout(()=>{
-          setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active); // Cambiar el turno
-        }, 1500) 
-      }
-      setTimeout(() => {
-        setCard1(null)
-        setCard2(null) 
-      }, 1500);
+        setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active)
     }
-    if(player1Points + player2Points === 12){
-      alert("Juego finalizado")
-      playAgain()
-    }
-  }, [card1, card2])
+    setShowModal(!showModal)
+  }
 
   
-
   return (
-    <>
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
             <NavBar imageSrc="/src/assets/logo_white.png"/>
             <div className="flex flex-col gap-8 mb-3 xl:flex-row xl:justify-center">
@@ -158,7 +231,6 @@ const TableGame: React.FC = () => {
                     </section>
                </div>
             </div>
-            <button onClick={openModal}>Open Modal</button>
             <Modal
               showModal={showModal}
               Question={question}
@@ -169,11 +241,18 @@ const TableGame: React.FC = () => {
               answer4={incorrectAnswer3}
               handleSubmit={handleSubmit}
             />
+            <ModalMessage 
+              imageSrc={imageMessage} 
+              message={message} 
+              showModal={isModalWinOpen} 
+              mainMessage={mainMessage}
+              playAgain={playAgain}
+              showModalWin={shoModalWin}/>
+
+            <button onClick={shoModalWin}>Open modal</button>
         </main>
-    
-    </>
-  );
-};
+  )
+}
 
 export default TableGame
 

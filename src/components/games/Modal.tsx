@@ -19,29 +19,31 @@ let modalContainer
         modalContainer = `fixed top-0 left-0 w-screen h-screen bg-gray-400/60 flex justify-center items-center hidden`
     }
 
+
+
     return(
         <div className={modalContainer}>
-            <div className="bg-white w-[550px] rounded-xl p-7 h-[50vh] absolute z-30 top-1/2 left-1/2 fixPosition">
-                <h1>Choose the correct answer</h1>
+            <div className="bg-white w-[550px] rounded-xl p-7 h-[60vh] absolute z-30 top-1/2 left-1/2 fixPosition">
+                <h1 className="text-2xl weigh font-normal font-Principal2 pb-5">Choose the correct answer</h1>
                 <hr/>
-                <p>{Question}</p>
-                <img className="w-14" src={imageSrc}/>
-                <form onSubmit={handleSubmit}>
-                    <input name="Answer" type="radio" value={answer1}/>
-                    <label>{answer1}</label>
+                <p className="pt-3 text-lg font-Secundaria">{Question}</p>
+                <img className="flex w-40 mx-auto pt-5 pb-4s" src={imageSrc} alt={`Imagen de ${Question}`} />
+                <form className="pt-5" onSubmit={handleSubmit}>
+                    <input className="mr-2" name="Answer" type="radio" value={answer1}/>
+                    <label className="text-lg">{answer1}</label>
                     <br/>
-                    <input name="Answer" type="radio" value={answer2}/>
-                    <label>{answer2}</label>
+                    <input className="mr-2" name="Answer" type="radio" value={answer2}/>
+                    <label className="text-lg">{answer2}</label>
                     <br/>
-                    <input name="Answer" type="radio" value={answer3}/>
-                    <label>{answer3}</label>
+                    <input className="mr-2" name="Answer" type="radio" value={answer3}/>
+                    <label className="text-lg">{answer3}</label>
                     <br/>
-                    <input name="Answer" type="radio" value={answer4}/>
-                    <label>{answer4}</label>
-                    <br/>
-                    <button type="submit">Submit</button>
+                    <input className="mr-2" name="Answer" type="radio" value={answer4}/>
+                    <label className="text-lg">{answer4}</label>
+                    <br className="pt-3"/>
+                    <hr className="pb-5 mt-5"/>
+                    <button className="bg-blue-700 text-white py-3 px-5 rounded-lg font-Principal2 text-xl" type="submit">Submit</button>
                 </form>
-                <hr/>
             </div>
         </div>
     )
