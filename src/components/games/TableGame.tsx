@@ -18,7 +18,6 @@ interface Card {
 }
   
 const TableGame: React.FC = () => {
-
   var duration = 15 * 1000;
   var animationEnd = Date.now() + duration;
   var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -42,6 +41,7 @@ const TableGame: React.FC = () => {
   //*Estados para las modales !No cambiar a cons
   let [question, setQuestion] = useState("")
   let [imageSrc, setImageSrc] = useState("")
+  let [correctAnswerRef, setcorrectAnswerRef] = useState("")
   let [correctAnswer, setCorrectAnswer] = useState("")
   let [incorrectAnswer1, setIncorrectAnswer1] = useState("")
   let [incorrectAnswer2, setIncorrectAnswer2] = useState("")
@@ -55,37 +55,7 @@ const TableGame: React.FC = () => {
     initGame()
   }, [])
 
-  useEffect(() => {
-    if (card1 && card2) {
-      if (card1.src === card2.src) {
-        setCards((prevCards) =>
-          prevCards.map((item) =>
-            item.src === card1.src ? { ...item, matched: true } : item
-          )
-        )
-        question = card1.question
-        imageSrc = card1.src
-        correctAnswer = card1.correctAnswer
-        incorrectAnswer1 = card1.incorrectAnswers[0]
-        incorrectAnswer2 = card1.incorrectAnswers[1]
-        incorrectAnswer3 = card1.incorrectAnswers[2]
-        setQuestion(question)
-        setImageSrc(imageSrc)
-        setCorrectAnswer(correctAnswer)
-        setIncorrectAnswer1(incorrectAnswer1)
-        setIncorrectAnswer2(incorrectAnswer2)
-        setIncorrectAnswer3(incorrectAnswer3)
-        openModal()
-      } else {
-        setTimeout(()=>{
-          setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active) // Cambiar el turno
-        }, 1500) 
-      }
-      setTimeout(() => {
-        setCard1(null)
-        setCard2(null) 
-      }, 1500);
-    }
+  useEffect(()=>{
     if(player1Points + player2Points === 12){
       if(player1Points > player2Points){
         mainMessage = "Victory"
@@ -145,6 +115,42 @@ const TableGame: React.FC = () => {
         }, 250)
       }      
     }
+  },[player1Points, player2Points])
+
+  useEffect(() => {
+    if (card1 && card2) {
+      if (card1.src === card2.src) {
+        setCards((prevCards) =>
+          prevCards.map((item) =>
+            item.src === card1.src ? { ...item, matched: true } : item
+          )
+        )
+        question = card1.question
+        imageSrc = card1.src
+        correctAnswer = card1.correctAnswer
+        incorrectAnswer1 = card1.incorrectAnswers[0]
+        incorrectAnswer2 = card1.incorrectAnswers[1]
+        incorrectAnswer3 = card1.incorrectAnswers[2]
+        correctAnswerRef = card1.correctAnswer
+        setcorrectAnswerRef(correctAnswerRef)
+        let shuffledAnswersArray = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3].sort(() => Math.random() - 0.5)
+        setQuestion(question)
+        setImageSrc(imageSrc)
+        setCorrectAnswer(shuffledAnswersArray[0])
+        setIncorrectAnswer1(shuffledAnswersArray[1])
+        setIncorrectAnswer2(shuffledAnswersArray[2])
+        setIncorrectAnswer3(shuffledAnswersArray[3])
+        openModal()
+      } else {
+        setTimeout(()=>{
+          setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active) // Cambiar el turno
+        }, 1500) 
+      }
+      setTimeout(() => {
+        setCard1(null)
+        setCard2(null) 
+      }, 1500);
+    }
   }, [card1, card2])
 
   //*Funciones
@@ -185,8 +191,7 @@ const TableGame: React.FC = () => {
     //obtener los radios
     const Form = new FormData(e.target)
     let answer =  Form.get('Answer')
-    //correctAnswer
-    if(correctAnswer === answer){
+    if(correctAnswerRef === answer){
       if(isPlayer1Active){
         setPlayer1Points( player1Points + 1)
       }else{
@@ -203,7 +208,6 @@ const TableGame: React.FC = () => {
     setShowModal(!showModal)
   }
 
-  
   return (
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
             <NavBar imageSrc="/src/assets/logo_white.png"/>
