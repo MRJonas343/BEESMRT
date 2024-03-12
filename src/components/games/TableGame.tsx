@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import cardItems from "./cards.json"
 import ButtonCard from "./ButtonCard"
 import Stats from "./Stats"
@@ -118,38 +118,42 @@ const TableGame: React.FC = () => {
   },[player1Points, player2Points])
 
   useEffect(() => {
-    if (card1 && card2) {
-      if (card1.src === card2.src) {
-        setCards((prevCards) =>
-          prevCards.map((item) =>
-            item.src === card1.src ? { ...item, matched: true } : item
+    if(card1 && card2){
+      if(card1.id === card2.id){
+      setCard2(null)
+      }else{
+        if (card1.src === card2.src) {
+          setCards((prevCards) =>
+            prevCards.map((item) =>
+              item.src === card1.src ? { ...item, matched: true } : item
+            )
           )
-        )
-        question = card1.question
-        imageSrc = card1.src
-        correctAnswer = card1.correctAnswer
-        incorrectAnswer1 = card1.incorrectAnswers[0]
-        incorrectAnswer2 = card1.incorrectAnswers[1]
-        incorrectAnswer3 = card1.incorrectAnswers[2]
-        correctAnswerRef = card1.correctAnswer
-        setcorrectAnswerRef(correctAnswerRef)
-        let shuffledAnswersArray = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3].sort(() => Math.random() - 0.5)
-        setQuestion(question)
-        setImageSrc(imageSrc)
-        setCorrectAnswer(shuffledAnswersArray[0])
-        setIncorrectAnswer1(shuffledAnswersArray[1])
-        setIncorrectAnswer2(shuffledAnswersArray[2])
-        setIncorrectAnswer3(shuffledAnswersArray[3])
-        openModal()
-      } else {
-        setTimeout(()=>{
-          setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active) // Cambiar el turno
-        }, 1500) 
+          question = card1.question
+          imageSrc = card1.src
+          correctAnswer = card1.correctAnswer
+          incorrectAnswer1 = card1.incorrectAnswers[0]
+          incorrectAnswer2 = card1.incorrectAnswers[1]
+          incorrectAnswer3 = card1.incorrectAnswers[2]
+          correctAnswerRef = card1.correctAnswer
+          setcorrectAnswerRef(correctAnswerRef)
+          let shuffledAnswersArray = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3].sort(() => Math.random() - 0.5)
+          setQuestion(question)
+          setImageSrc(imageSrc)
+          setCorrectAnswer(shuffledAnswersArray[0])
+          setIncorrectAnswer1(shuffledAnswersArray[1])
+          setIncorrectAnswer2(shuffledAnswersArray[2])
+          setIncorrectAnswer3(shuffledAnswersArray[3])
+          openModal()
+        } else {
+          setTimeout(()=>{
+            setIsPlayer1Active((prevIsPlayer1Active) => !prevIsPlayer1Active) // Cambiar el turno
+          }, 1000) 
+        }
+        setTimeout(() => {
+          setCard1(null)
+          setCard2(null) 
+        }, 1000);
       }
-      setTimeout(() => {
-        setCard1(null)
-        setCard2(null) 
-      }, 1500);
     }
   }, [card1, card2])
 
@@ -252,8 +256,6 @@ const TableGame: React.FC = () => {
               mainMessage={mainMessage}
               playAgain={playAgain}
               showModalWin={shoModalWin}/>
-
-            <button onClick={shoModalWin}>Open modal</button>
         </main>
   )
 }
