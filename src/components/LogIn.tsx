@@ -1,5 +1,4 @@
 import NavBar from "./NavBar"
-import { FacebookLoginButton } from "react-social-login-buttons"
 
 const LogIn = () => {
 
