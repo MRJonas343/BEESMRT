@@ -18,9 +18,10 @@ interface Card {
 }
   
 const TableGame: React.FC = () => {
-  var duration = 15 * 1000;
-  var animationEnd = Date.now() + duration;
-  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+  //* Valores para el efecto confeti
+  const duration = 15 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
   
   function randomInRange(min : any, max : any) {
     return Math.random() * (max - min) + min;
@@ -38,7 +39,7 @@ const TableGame: React.FC = () => {
   const [isModalWinOpen, setModalWinOpen] = useState(false)
   
   
-  //*Estados para las modales !No cambiar a cons
+  //*Estados para las modales !No cambiar a const
   let [question, setQuestion] = useState("")
   let [imageSrc, setImageSrc] = useState("")
   let [correctAnswerRef, setcorrectAnswerRef] = useState("")
@@ -85,17 +86,15 @@ const TableGame: React.FC = () => {
         setMessage(message)
         setImageMessage(imageMessage)
         shoModalWin()
-        var interval = setInterval(function() {
-          var timeLeft = animationEnd - Date.now();
-        
+
+        let interval = setInterval(function() {
+          let timeLeft = animationEnd - Date.now()
           if (timeLeft <= 0) {
-            return clearInterval(interval);
+            return clearInterval(interval)
           }
-        
-          var particleCount = 50 * (timeLeft / duration);
-          // since particles fall down, start a bit higher than random
-          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+          let particleCount = 50 * (timeLeft / duration)
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } })
+          confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } })
         }, 250);
       }else{
         mainMessage = "Tiee!!!"
