@@ -1,6 +1,10 @@
 import NavBar from "./NavBar"
 import Card from "./Card"
 import { Link } from "react-router-dom"
+import MemoryGameImg from '../assets/perdida-de-memoria.png'
+import HangmanImg from '../assets/verdugo.png'
+import DragImg from '../assets/arrastra-y-suelta.png'
+import DomainImg from '../assets/brasil.png'
 
 const Home = () => { 
   return(
@@ -12,23 +16,23 @@ const Home = () => {
 
         <Link to="/games/TableGame" className="flex">
           <Card
-          imageSrc="src/assets/perdida-de-memoria.png"
+          imageSrc={MemoryGameImg}
           title="Memory Game"
           text="When you find a couple of cards you will have to complete a sentence or answer a question."/>
         </Link>
 
         <Card
-        imageSrc="src/assets/verdugo.png" 
+        imageSrc={HangmanImg} 
         title="Hangman"
         text="Practice your vocabulary with a hangman, try to solve it before he is executed."/>
 
         <Card
-        imageSrc="src/assets/arrastra-y-suelta.png"
+        imageSrc={DragImg}
         title="Drag and Drop"
         text="Drag and drop cards in fewer attempts than your opponent and win the game"/>
 
         <Card
-        imageSrc="src/assets/brasil.png"
+        imageSrc={DomainImg}
         title="Domain"
         text="Conquer your opponent's territories, enjoy a game similar to Chinese checkers while practicing your English."/> 
       </section>
