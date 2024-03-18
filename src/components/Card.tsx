@@ -1,7 +1,7 @@
 interface CardProps {
-  imageSrc: string;
-  title: string;
-  text: string;
+  imageSrc: string
+  title: string
+  text: string
 }
 
 const Card: React.FC<CardProps> = ({ imageSrc, title, text }) => {
@@ -11,7 +11,7 @@ const Card: React.FC<CardProps> = ({ imageSrc, title, text }) => {
       <h2 className="font-Principal text-2xl py-3 text-center text-3d text-white md:text-4xl">{title}</h2>
       <p className=" text-clip overflow-y-auto font-Principal text-l font-thin md:text-2xl">{text}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

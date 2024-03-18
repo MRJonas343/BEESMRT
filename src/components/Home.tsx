@@ -6,7 +6,8 @@ import HangmanImg from '../assets/verdugo.png'
 import DragImg from '../assets/arrastra-y-suelta.png'
 import DomainImg from '../assets/brasil.png'
 
-const Home = () => { 
+const Home: React.FC = () => { 
+  console.log("Por que no funciona?" + MemoryGameImg)
   return(
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
       <NavBar/>
