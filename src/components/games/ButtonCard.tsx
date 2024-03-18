@@ -1,3 +1,5 @@
+import BackCardImg from './img/back.png'
+
 interface ButtonProps {
   card: any
   flipped: boolean
@@ -12,7 +14,7 @@ const ButtonCard: React.FC<ButtonProps> = ({ card, flipped, chooseCard }) => {
   return (
     <div className={classCard} onClick={cardHandleClick}>
       <img className="cardImg min-w-11 max-w-14 md:w-20 md:max-w-3xl xl:w-28 absolute" alt="" src={card.src} />
-      <img className="cardBack min-w-11 max-w-14 md:w-20 md:max-w-3xl xl:w-28 absolute hover:scale-110 duration-200 ease-in-out" src="/src/components/games/img/back.png" />
+      <img className="cardBack min-w-11 max-w-14 md:w-20 md:max-w-3xl xl:w-28 absolute hover:scale-110 duration-200 ease-in-out" src={BackCardImg} />
     </div>
   )
 }

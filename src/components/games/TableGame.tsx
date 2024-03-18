@@ -6,6 +6,8 @@ import NavBar from "../NavBar"
 import Modal from "./Modal"
 import ModalMessage from "./ModalMessage"
 import confetti from  'canvas-confetti'
+import TrofeoImg from './img/trofeo.png'
+import Swords from './img/espadas.png'
 
 //*Objetos obtenidos del JSON
 interface Card {
@@ -61,7 +63,7 @@ const TableGame: React.FC = () => {
       if(player1Points > player2Points){
         mainMessage = "Victory"
         message = "Player 1 has won!!!"
-        imageMessage = "/src/components/games/img/trofeo.png"
+        imageMessage = TrofeoImg
         setMainMessage(mainMessage)
         setMessage(message)
         setImageMessage(imageMessage)
@@ -81,7 +83,7 @@ const TableGame: React.FC = () => {
       }else if(player1Points < player2Points){
         mainMessage = "Victory"
         message = "Player 2 has won!!!"
-        imageMessage = "/src/components/games/img/trofeo.png"
+        imageMessage = TrofeoImg
         setMainMessage(mainMessage)
         setMessage(message)
         setImageMessage(imageMessage)
@@ -99,7 +101,7 @@ const TableGame: React.FC = () => {
       }else{
         mainMessage = "Tiee!!!"
         message = "Good match"
-        imageMessage = "/src/components/games/img/espadas.png"
+        imageMessage = Swords
         setMainMessage(mainMessage)
         setMessage(message)
         setImageMessage(imageMessage)
