@@ -19,7 +19,7 @@ let modalContainer
 
     return(
         <div className={modalContainer}>
-            <div className="bg-white w-[550px] rounded-xl p-7 h-[60vh] absolute z-30 top-1/2 left-1/2 fixPosition">
+            <div className="bg-white w-[350px] rounded-xl p-7 h-auto absolute z-30 top-1/2 left-1/2 fixPosition">
                 <h1 className="text-5xl text-center weigh font-extrabold font-Principal pb-5 text-3d text-yellow-400 spacing tracking-wider">{mainMessage}</h1>
                 <hr/>
                 <p className="pt-3 text-5xl text-center font-Principal2 text-Pink1 tracking-wider">{message}</p>

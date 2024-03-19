@@ -24,10 +24,10 @@
         background-image: url('../assets/icon-close.svg');
     }
     .text-3d{
-        text-shadow: -3px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
     .text-3d2{
-        text-shadow: -6px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
     .cardImg{
         backface-visibility: hidden;

@@ -21,7 +21,7 @@ let modalContainer
 
     return(
         <div className={modalContainer}>
-            <div className="bg-white w-[400px] rounded-xl p-7 h-auto absolute z-30 top-1/2 left-1/2 fixPosition">
+            <div className="bg-white w-[350px] rounded-xl p-7 h-auto absolute z-30 top-1/2 left-1/2 fixPosition">
                 <h1 className="text-xl weigh font-normal font-Principal2 pb-5">Choose the correct answer</h1>
                 <hr/>
                 <p className="pt-3 text-base font-Secundaria">{Question}</p>
