@@ -24,25 +24,25 @@ let modalContainer
 
     return(
         <div className={modalContainer}>
-            <div className="bg-white w-[550px] rounded-xl p-7 h-[60vh] absolute z-30 top-1/2 left-1/2 fixPosition">
-                <h1 className="text-2xl weigh font-normal font-Principal2 pb-5">Choose the correct answer</h1>
+            <div className="bg-white w-[400px] rounded-xl p-7 h-auto absolute z-30 top-1/2 left-1/2 fixPosition">
+                <h1 className="text-xl weigh font-normal font-Principal2 pb-5">Choose the correct answer</h1>
                 <hr/>
-                <p className="pt-3 text-lg font-Secundaria">{Question}</p>
-                <img className="flex w-40 mx-auto pt-5 pb-4s" src={imageSrc} alt={`Imagen de ${Question}`} />
-                <form className="pt-5" onSubmit={handleSubmit}>
+                <p className="pt-3 text-base font-Secundaria">{Question}</p>
+                <img className="flex w-32 mx-auto pt-5 pb-4s" src={imageSrc} alt={`Imagen de ${Question}`} />
+                <form className="pt-3" onSubmit={handleSubmit}>
                     <input className="mr-2" name="Answer" type="radio" value={answer1}/>
-                    <label className="text-lg">{answer1}</label>
+                    <label className="text-base">{answer1}</label>
                     <br/>
                     <input className="mr-2" name="Answer" type="radio" value={answer2}/>
-                    <label className="text-lg">{answer2}</label>
+                    <label className="text-base">{answer2}</label>
                     <br/>
                     <input className="mr-2" name="Answer" type="radio" value={answer3}/>
-                    <label className="text-lg">{answer3}</label>
+                    <label className="text-base">{answer3}</label>
                     <br/>
                     <input className="mr-2" name="Answer" type="radio" value={answer4}/>
-                    <label className="text-lg">{answer4}</label>
+                    <label className="text-base">{answer4}</label>
                     <br className="pt-3"/>
-                    <hr className="pb-5 mt-5"/>
+                    <hr className="pb-5 mt-3"/>
                     <button className="bg-blue-700 text-white py-3 px-5 rounded-lg font-Principal2 text-xl" type="submit">Submit</button>
                 </form>
             </div>

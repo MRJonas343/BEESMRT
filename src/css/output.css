@@ -698,16 +698,8 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .mb-6 {
@@ -720,6 +712,10 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-2 {
@@ -736,10 +732,6 @@ video {
 
 .mt-7 {
   margin-top: 1.75rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
 }
 
 .block {
@@ -762,8 +754,8 @@ video {
   height: 2.5rem;
 }
 
-.h-16 {
-  height: 4rem;
+.h-14 {
+  height: 3.5rem;
 }
 
 .h-5 {
@@ -791,20 +783,12 @@ video {
   height: 100vh;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
-.h-14 {
-  height: 3.5rem;
-}
-
 .w-1\/3 {
   width: 33.333333%;
 }
 
-.w-24 {
-  width: 6rem;
+.w-20 {
+  width: 5rem;
 }
 
 .w-28 {
@@ -860,16 +844,16 @@ video {
   width: 100vw;
 }
 
-.w-4 {
-  width: 1rem;
+.w-\[80vw\] {
+  width: 80vw;
 }
 
-.w-16 {
-  width: 4rem;
+.w-\[400px\] {
+  width: 400px;
 }
 
-.w-20 {
-  width: 5rem;
+.w-32 {
+  width: 8rem;
 }
 
 .min-w-11 {
@@ -945,20 +929,16 @@ video {
   gap: 2.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
 
 .gap-6 {
   gap: 1.5rem;
-}
-
-.gap-8 {
-  gap: 2rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
 }
 
 .overflow-hidden {
@@ -1061,16 +1041,12 @@ video {
   background-position: center;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-12 {
   padding: 3rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .p-4 {
@@ -1083,10 +1059,6 @@ video {
 
 .p-7 {
   padding: 1.75rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-10 {
@@ -1134,24 +1106,9 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
 }
 
 .pb-3 {
@@ -1214,6 +1171,11 @@ video {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1227,11 +1189,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-bold {
@@ -1562,10 +1519,6 @@ video {
 
   .xl\:h-\[80vh\] {
     height: 80vh;
-  }
-
-  .xl\:h-\[40vh\] {
-    height: 40vh;
   }
 
   .xl\:w-28 {
