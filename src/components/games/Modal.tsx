@@ -19,9 +19,6 @@ let modalContainer
         modalContainer = `fixed top-0 left-0 w-screen h-screen bg-gray-400/60 flex justify-center items-center hidden`
     }
 
-    //I need to mix the answers
-    
-
     return(
         <div className={modalContainer}>
             <div className="bg-white w-[400px] rounded-xl p-7 h-auto absolute z-30 top-1/2 left-1/2 fixPosition">
