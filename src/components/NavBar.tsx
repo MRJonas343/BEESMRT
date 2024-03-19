@@ -6,14 +6,14 @@ import logoWhite from  '../assets/logo_white.png'
 
 const NavBar: React.FC = ()=> {
     const [isExpanded, setIsExpanded] = useState(false)
-    let btnClassName = isExpanded ? 'bg-close-menu w-6 h-5 bg-cover bg-center cursor-pointer transition-all z-50 md:hidden' : ' w-6 h-5 bg-cover bg-center cursor-pointer transition-all z-50 md:hidden bg-open-menu'
+    let btnClassName = isExpanded ? 'bg-close-menu w-5 h-5 bg-cover bg-center cursor-pointer transition-all z-50 md:hidden' : ' w-5 h-5 bg-cover bg-center cursor-pointer transition-all z-50 md:hidden bg-open-menu'
 
     const handlerClick = () => {
         setIsExpanded(!isExpanded)
     }
 
     return (
-        <nav className="w-[95%] px-6 mx-auto overflow-hidden h-20 flex items-center justify-between font-Principal text-3xl text-3d text-white lg:text-4xl xl:w-screen xl:px-12 xl:text-5xl">
+        <nav className="w-[95%] px-6 mx-auto overflow-hidden h-10 my-3 flex items-center justify-between font-Principal text-3xl text-3d text-white lg:text-4xl xl:w-screen xl:px-12 xl:text-5xl">
             <Link to='/' className="w-1/3 max-w-[240px] hover:scale-110 ease-in-out duration-200">
                 <img alt="logo" src={logoWhite} className="w-40 md:w-48"></img>
             </Link>
