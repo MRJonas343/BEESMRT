@@ -216,7 +216,7 @@ const TableGame: React.FC = () => {
   return (
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
             <NavBar/>
-            <div className="flex flex-col gap-8 mb-3 xl:flex-row xl:justify-center">
+            <div className="flex mt-2 flex-col gap-8 mb-3 xl:flex-row xl:justify-center">
                 <Stats
                 isPlayer1Active={isPlayer1Active}
                 player1Points={player1Points}
