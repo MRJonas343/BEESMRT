@@ -24,14 +24,11 @@ const NavBar: React.FC = ()=> {
 
             <input id="btn-open-menu" type="checkbox" className="peer hidden"/>
 
-            <div className="fixed inset-0 translate-x-full peer-checked:translate-x-0 transition-transform md:static  md:translate-x-0 z-40">
+            <div className="fixed top-0 left-0 w-screen h-screen bg-gray-400/60 md:bg-transparent flex justify-center items-center inset-0 translate-x-full peer-checked:translate-x-0 transition-transform md:static  md:translate-x-0 z-40">
                 <div className="">
                 <ul className="bg-white absolute inset-x-0 top-24 p-12 w-[90%] mx-auto rounded-lg h-max text-center grid gap-10 md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static">
                     <li className="hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
                         <Link to='/LogIn'>Log In</Link>
-                    </li>
-                    <li className="hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
-                        <Link to='/SignIn'>Sign In</Link>
                     </li>
                     <li className="hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
                         <Link to='/Contact'>Contact Us</Link>
@@ -39,11 +36,14 @@ const NavBar: React.FC = ()=> {
                     <li className="hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
                         <Link to='/About'>About Us</Link>
                     </li>
+                    <li className="hover:scale-110 ease-in-out duration-200 hover:text-purple-500 lg:hidden">
+                        <Link to='/MyAccount'>My account</Link>
+                    </li>
                 </ul>
                 </div>
             </div>
 
-            <Link to="/LogIn" className="hidden xl:block hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
+            <Link to="/MyAccount" className="hidden xl:block hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
                 <button className="hidden lg:block w-max text-3d">My account</button>
             </Link>
 

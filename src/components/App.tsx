@@ -5,7 +5,8 @@ import SignIn from "./SignIn"
 import Contact from './Contact'
 import About from './About'
 import TableGame from './games/TableGame'
-import Hangman from './games/hangman'
+import MyAccount from './MyAccount'
+import Hangman from './games/Hangman'
 
 const App = ()=> {
     return (
@@ -17,7 +18,8 @@ const App = ()=> {
                 <Route path="/Contact"Component={Contact}/>
                 <Route path="/About"Component={About}/>
                 <Route path="/games/TableGame/" Component={TableGame}/>
-                <Route path="/games/hangman/" Component={Hangman}/>
+                <Route path="/games/Hangman/" Component={Hangman}/>
+                <Route path="/MyAccount" Component={MyAccount}/>
             </Routes>
         </BrowserRouter>
     )
