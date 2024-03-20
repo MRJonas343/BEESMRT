@@ -13,7 +13,7 @@ const NavBar: React.FC = ()=> {
     }
 
     return (
-        <nav className="w-[95%] px-6 mx-auto overflow-hidden h-9 mt-3 flex items-center justify-between font-Principal text-3xl text-3d text-white xl:w-screen xl:px-12 lg:text-4xl">
+        <nav className="w-[95%] px-6 mx-auto overflow-hidden h-9 mt-3 flex items-center justify-between font-Principal text-3xl text-3d text-white xl:w-screen xl:px-12">
             <Link to='/' className="w-1/3 max-w-[240px] hover:scale-110 ease-in-out duration-200">
                 <img alt="logo" src={logoWhite} className="w-40"></img>
             </Link>
@@ -44,7 +44,7 @@ const NavBar: React.FC = ()=> {
             </div>
 
             <Link to="/LogIn" className="hidden xl:block hover:scale-110 ease-in-out duration-200 hover:text-purple-500">
-                <button className="hidden lg:block w-max text-3d">Upgrade</button>
+                <button className="hidden lg:block w-max text-3d">My account</button>
             </Link>
 
         </nav>

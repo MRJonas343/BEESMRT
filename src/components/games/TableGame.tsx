@@ -228,7 +228,7 @@ const TableGame: React.FC = () => {
                       Memory Game
                     </h1>
 
-                    <section className="grid grid-cols-4 bg-white/40 p-5 mx-5 justify-items-center rounded-xl gap-4 md:grid-cols-6 xl:p-10">
+                    <section className="grid grid-cols-4 bg-white/40 p-5 mx-3 justify-items-center rounded-xl gap-3 md:grid-cols-6 xl:p-6">
                       {cards.map((card) => (
                         <ButtonCard
                           key={card.id}
