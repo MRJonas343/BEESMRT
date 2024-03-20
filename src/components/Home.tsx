@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <NavBar/>
       
       <h1 className="text-4xl text-center pb-3 text-white text-3d2 font-Principal2 from-neutral-400 md:text-4xl md:py-5 lg:text-6xl xl:py-14  xl:py-8">BEESMRT GAMES</h1>
-      <section className="bg-red-500 grid grid-cols-2 justify-items-center gap-4 h-[83vh] lg:flex lg:justify-center lg:items-center lg:gap-9 lg:h-[70vh]">
+      <section className="grid grid-cols-2 justify-items-center gap-4 h-[83vh] lg:flex lg:justify-center lg:items-center lg:gap-9 lg:h-[70vh]">
 
         <Link to="/games/TableGame" className="flex">
           <Card

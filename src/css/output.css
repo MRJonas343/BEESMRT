@@ -1336,6 +1336,10 @@ video {
     height: 35vh;
   }
 
+  .md\:h-\[37vh\] {
+    height: 37vh;
+  }
+
   .md\:w-2\/3 {
     width: 66.666667%;
   }
@@ -1451,6 +1455,10 @@ video {
 
   .lg\:w-\[22vw\] {
     width: 22vw;
+  }
+
+  .lg\:w-36 {
+    width: 9rem;
   }
 
   .lg\:flex-row {
