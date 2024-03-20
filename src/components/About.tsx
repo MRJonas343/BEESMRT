@@ -1,5 +1,10 @@
 import NavBar from "./NavBar"
 import CardAbout from "./CardAbout"
+import AbejitaEstudiosa from "../assets/abejitaestudiosa.png"
+import Control from "../assets/control.png"
+import Comun from "../assets/comun.png"
+import Puzzle from "../assets/puzzle.png"
+import CardImage from "../assets/card.png"
 
 const About = () =>{
     return (
@@ -16,7 +21,7 @@ const About = () =>{
                             It seeks to give users the opportunity to learn and to learn and refine their English language knowledge and skills, through casual, engaging and entertaining tools and media that will help users attractive and casual entertainment tools and media that will help users to understand and use the language in a professional environment in which they will apply what they have learned.</p>
                         </div>
                         <div className="flex justify-center py-7 md:mx-auto"> 
-                            <img src="src/assets/abejitaestudiosa.png" alt="bee teacher" className="md:w-48"/>
+                            <img src={AbejitaEstudiosa} alt="bee teacher" className="md:w-48"/>
                         </div>
                     </div>
             </section>
@@ -25,19 +30,19 @@ const About = () =>{
             </section>
             <section className="bg-white h-auto w-auto px-6 mx-8 outline-slate-950 outline rounded-xl mb-9 pb-5 lg:pl-14 lg:mx-20">
                  <CardAbout 
-                    image="src/assets/control.png"
+                    image={Control}
                     title="Learning by Play:"
                     text="With BeeSMRT, learning English becomes an exciting and dynamic experience through a wide range of interactive and challenging games. and dynamic experience through a wide range of interactive and challenging games." />
                 <CardAbout
-                    image="src/assets/card.png"
+                    image={CardImage}
                     title="Variety of games:"
                     text="From crossword puzzles to word games, brain teasers and grammar challenges, BeeSMRT offers a variety of options for all skill levels, BeeSMRT offers a variety of options for all skill levels - you'll never stop having fun while you learn! while you learn!"/>
                 <CardAbout
-                    image="src/assets/comun.png"
+                    image={Comun}
                     title="Friendly Batles:"
                     text="Challenge your friends or join online competitions to test your English skills and win exciting rewards. The fun never ends at BeeSMRT!"/>
                 <CardAbout
-                    image="src/assets/puzzle.png"
+                    image={Puzzle}
                     title="Customized Levels:"
                     text="Custom Levels: Tailor your learning experience by choosing from different levels of difficulty. difficulty. BeeSMRT adjusts to your pace, providing a personalized learning environment."/>
             </section>
