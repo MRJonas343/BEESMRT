@@ -216,7 +216,7 @@ const TableGame: React.FC = () => {
   return (
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
             <NavBar/>
-            <div className="flex mt-1 flex-col gap-3 mb-1 xl:flex-row xl:justify-center">
+            <div className="flex mt-4 flex-col gap-3 mb-1 xl:flex-row xl:justify-center">
                 <Stats
                 isPlayer1Active={isPlayer1Active}
                 player1Points={player1Points}
@@ -224,7 +224,7 @@ const TableGame: React.FC = () => {
                 playAgain={playAgain}
                 />
                   <div>
-                    <h1 className="text-2xl font-Principal2 text-white pb-3 text-3d lg:text-7xl text-center xl:ml-[30%] xl:text-start">
+                    <h1 className="text-2xl font-Principal2 text-white pb-3 text-3d lg:text-4xl text-center xl:ml-[30%] xl:text-start">
                       Memory Game
                     </h1>
 
