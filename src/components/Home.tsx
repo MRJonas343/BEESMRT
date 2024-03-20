@@ -6,6 +6,7 @@ import HangmanImg from '../assets/verdugo.png'
 import DragImg from '../assets/arrastra-y-suelta.png'
 import DomainImg from '../assets/brasil.png'
 
+
 const Home: React.FC = () => { 
   console.log("Por que no funciona?" + MemoryGameImg)
   return(
@@ -22,10 +23,12 @@ const Home: React.FC = () => {
           text="When you find a couple of cards you will have to complete a sentence or answer a question."/>
         </Link>
 
+        <Link to="/games/hangman" className="flex">
         <Card
         imageSrc={HangmanImg} 
         title="Hangman"
         text="Practice your vocabulary with a hangman, try to solve it before he is executed."/>
+        </Link>
 
         <Card
         imageSrc={DragImg}

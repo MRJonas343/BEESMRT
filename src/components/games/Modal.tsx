@@ -41,6 +41,7 @@ let modalContainer
                     <br className="pt-3"/>
                     <hr className="pb-5 mt-3"/>
                     <button className="bg-blue-700 text-white py-3 px-5 rounded-lg font-Principal2 text-xl" type="submit">Submit</button>
+                    
                 </form>
             </div>
         </div>
