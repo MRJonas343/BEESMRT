@@ -34,10 +34,6 @@ const Hangman: React.FC = () => {
         return word.split('').every((letter) => guesses.includes(letter));
     };
 
-    const isGameLost = () => {
-        return incorrectGuesses.length >= 6;
-    };
-
     const handleRestart = () => {
         setWord('');
         setGuesses([]);
