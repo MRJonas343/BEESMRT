@@ -27,7 +27,7 @@ const Stats : React.FC<StatProps> = ({ isPlayer1Active, player1Points, player2Po
 
     return (
     <section className="flex justify-evenly xl:flex-col xl:h-[80vh]">
-        <div className="bg-white/80 px-8 py-2 font-Principal2 text-center rounded-xl md:w-56">
+        <div className="bg-white/80 px-8 py-2 font-Principal2 text-center rounded-xl md:w-56 2xl:h-48">
             <h2 className="text-lg mb-2">TURN: </h2>
             <p className={Player1Class}>PLAYER 1</p>
             <p className={Player2Class}>PlAYER 2</p>

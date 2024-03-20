@@ -9,7 +9,7 @@ interface ButtonProps {
 const ButtonCard: React.FC<ButtonProps> = ({ card, flipped, chooseCard }) => {
   const cardHandleClick = () => chooseCard(card)
 
-  let classCard = `card ${flipped ? 'matched' : ''} p-2 w-20 h-14 bg-gray-100 flex relative justify-center items-center cursor-pointer  md:w-24 md:h-20 xl:w-28 xl:h-24`
+  let classCard = `card ${flipped ? 'matched' : ''} p-2 w-20 h-14 bg-gray-100 flex relative justify-center items-center cursor-pointer  md:w-24 md:h-20 xl:w-36 xl:h-32`
 
   return (
     <div className={classCard} onClick={cardHandleClick}>
