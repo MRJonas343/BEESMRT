@@ -3,7 +3,8 @@ import { useState,useEffect } from "react"
 import ModalMessage from "./ModalMessage"
 import Key from "./Key"
 import Words from "../games/wordList.json"
-import Swords from './img/espadas.png'
+import Defeat from './img/perder.png'
+import Trofeo from './img/trofeo.png'
 import confetti from  'canvas-confetti'
 import HangmanImg0 from "./img/hangman-0.svg"
 import HangmanImg1 from "./img/hangman-1.svg"
@@ -57,6 +58,7 @@ const Hangman: React.FC = () => {
         hangmanImg = HangmanImg0
         setHangmanImg(hangmanImg)
         setShowModal(false)
+        setPoints(0)
     }
 
     function handleKeyClick(e : any){
@@ -79,9 +81,9 @@ const Hangman: React.FC = () => {
                 return elemento !== null
             })
             if (todosNoSonNull) {
+                setImageSrc(Trofeo)
                 setMessage("You Win")
                 setMainMessage("Congratulations")
-                setImageSrc(Swords)
                 setShowModal(true)
                 let interval = setInterval(function() {
                     let timeLeft = animationEnd - Date.now()
@@ -132,10 +134,11 @@ const Hangman: React.FC = () => {
 
     useEffect(() => {
         if(attemps === 6){
-            setImageSrc(Swords)
+            setImageSrc(Defeat)
             setMessage("You Lose")
             setMainMessage("Game Over")
             setShowModal(true)
+            setAttemps(0)
         }
     },[attemps])
 
@@ -143,17 +146,20 @@ const Hangman: React.FC = () => {
     <>
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
         <NavBar/>
-        <h1 className="text-3xl font-Principal2 text-white text-3d text-center my-2">Hangman</h1>
-        <div className="bg-white w-11/12 h-auto rounded-lg mx-auto">
-            <div className="flex w-full justify-center pt-4 pb-4">
-                <img src={hangmanImg} className="w-48"></img>
+        <h1 className="text-3xl font-Principal2 text-white text-3d text-center my-2">Hangman Game</h1>
+        <div className="bg-white w-11/12 h-auto rounded-lg mx-auto lg:flex lg:w-[90%] justify-evenly items-center lg:h-[70%]">
+            <div className="basis-2/6">
+                <div className="flex w-full justify-center pt-4 pb-4">
+                    <img src={hangmanImg} className="w-48 lg:w-56"></img>
+                </div>
             </div>
+            <div className="basis-4/6">
             <div className="font-bold h-16 items-end flex w-full justify-center gap-3">
                 {espacios.map((element, index) => {
                     return (
                         <div key={index} className="text-center pt-7">
                                 {element}
-                            <div className="outline outline-black w-4 h-0 m-1 mb-4">
+                            <div className="outline outline-black w-4 h-0 m-1 mb-4 lg:w-6">
                             </div>
                         </div>
                     )
@@ -169,8 +175,9 @@ const Hangman: React.FC = () => {
                     })}
                 </div>
                 <div className="flex w-full justify-around pt-5 pb-5">
-                    <button className="text-base bg-red-600 rounded-md p-2 w-20 text-white" onClick={playAgain}>RESET</button>
-                    <p className="text-base bg-green-500 rounded-md p-2 w-20 text-white">Points : {points}</p>
+                    <button className="text-base bg-red-600 rounded-md p-2 w-24 text-white lg:w-32 lg:text-lg" onClick={playAgain}>RESET</button>
+                    <p className="text-base bg-green-500 rounded-md p-2 w-24 text-white lg:w-32 lg:text-lg">Points : {points}</p>
+                </div>
                 </div>
             </div>
             <ModalMessage showModal={showModal} imageSrc={imageSrc} message={message} mainMessage={mainMessage} playAgain={playAgain} showModalWin={()=>setShowModal(!showModal)}/>
