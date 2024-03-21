@@ -11,6 +11,7 @@
     "scanTailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "dependencies": {
+    "@midudev/tailwind-animations": "^0.0.7",
     "canvas-confetti": "^1.9.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
