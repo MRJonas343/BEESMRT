@@ -6,7 +6,7 @@ import Contact from './Contact'
 import About from './About'
 import MyAccount from './MyAccount'
 import TableGame from './games/TableGame'
-import Hangman from './games/Hangman'
+import HangmanGame from './games/HangmanGame'
 
 const App = ()=> {
     return (
@@ -18,8 +18,8 @@ const App = ()=> {
                 <Route path="/Contact"Component={Contact}/>
                 <Route path="/About"Component={About}/>
                 <Route path="/MyAccount" Component={MyAccount}/>
-                <Route path="/games/Hangman" Component={Hangman}/>
                 <Route path="/games/TableGame" Component={TableGame}/>
+                <Route path="/games/HangmanGame" Component={HangmanGame}/>
             </Routes>
         </BrowserRouter>
     )

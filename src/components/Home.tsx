@@ -23,7 +23,7 @@ const Home: React.FC = () => {
           text="When you find a couple of cards you will have to complete a sentence or answer a question."/>
         </Link>
 
-        <Link to="/games/hangman" className="flex">
+        <Link to="/games/HangmanGame" className="flex">
         <Card
         imageSrc={HangmanImg} 
         title="Hangman"
