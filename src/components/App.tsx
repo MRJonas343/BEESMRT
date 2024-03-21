@@ -4,8 +4,8 @@ import LogIn from "./LogIn"
 import SignIn from "./SignIn"
 import Contact from './Contact'
 import About from './About'
-import TableGame from './games/TableGame'
 import MyAccount from './MyAccount'
+import TableGame from './games/TableGame'
 import Hangman from './games/Hangman'
 
 const App = ()=> {
@@ -17,9 +17,9 @@ const App = ()=> {
                 <Route path="/SignIn"Component={SignIn}/>
                 <Route path="/Contact"Component={Contact}/>
                 <Route path="/About"Component={About}/>
-                <Route path="/games/TableGame" Component={TableGame}/>
-                <Route path="/games/Hangman" Component={Hangman}/>
                 <Route path="/MyAccount" Component={MyAccount}/>
+                <Route path="/games/Hangman" Component={Hangman}/>
+                <Route path="/games/TableGame" Component={TableGame}/>
             </Routes>
         </BrowserRouter>
     )
