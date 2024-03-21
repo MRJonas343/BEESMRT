@@ -17,8 +17,8 @@ const App = ()=> {
                 <Route path="/SignIn"Component={SignIn}/>
                 <Route path="/Contact"Component={Contact}/>
                 <Route path="/About"Component={About}/>
-                <Route path="/games/TableGame/" Component={TableGame}/>
-                <Route path="/games/Hangman/" Component={Hangman}/>
+                <Route path="/games/TableGame" Component={TableGame}/>
+                <Route path="/games/Hangman" Component={Hangman}/>
                 <Route path="/MyAccount" Component={MyAccount}/>
             </Routes>
         </BrowserRouter>
