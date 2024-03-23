@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "word" : "Trophy",
+        "description" : "A cup or other decorative object awarded as a prize for a victory or success.",
+        "image" : "https://i.ibb.co/NZ0rWmf/trofeo-1.png"
+    },
+    {
+        "id": 2,
+        "word" : "Prize",
+        "description" : "A thing given as a reward to the winner of a competition",
+        "image" : "https://i.ibb.co/f038Z9x/medalla.png"
+    },
+    {
+        "id": 3,
+        "word" : "Plaque",
+        "description" : "A flat, thin piece of metal or wood with writing on it, used as a memorial or for decoration.",
+        "image" : "https://i.ibb.co/Fh9Yd2g/movil.png"
+    },
+    {
+        "id": 4,
+        "word" : "Cup",
+        "description" : "A small bowl-shaped container for drinking from, typically having a handle.",
+        "image" : "https://i.ibb.co/WBD456x/taza-de-cafe.png"
+    },
+    {
+        "id": 5,
+        "word" : "Shield",
+        "description" : "A broad piece of metal or another suitable material, held by straps or a handle attached on one side, used as a protection against blows or missiles.",
+        "image" : "https://i.ibb.co/R2jdDKq/proteger.png"
+    },
+    {
+        "id": 6,
+        "word" : "Ribbon",
+        "description" : "A long, narrow strip of fabric, used for tying something or for decoration.",
+        "image" : "https://i.ibb.co/QFT0wzM/cinta-adhesiva.png"
+    }
+]

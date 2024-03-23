@@ -8,7 +8,6 @@ import DomainImg from '../assets/brasil.png'
 
 
 const Home: React.FC = () => { 
-  console.log("Por que no funciona?" + MemoryGameImg)
   return(
     <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
       <NavBar/>
@@ -30,11 +29,13 @@ const Home: React.FC = () => {
         text="Practice your vocabulary with a hangman, try to solve it before he is executed."/>
         </Link>
 
+        <Link to="/games/Drag_Drop" className="flex">
         <Card
         imageSrc={DragImg}
         title="Drag and Drop"
         text="Drag and drop cards in fewer attempts than your opponent and win the game"/>
-
+        </Link>
+        
         <Card
         imageSrc={DomainImg}
         title="Domain"

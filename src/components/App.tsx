@@ -7,6 +7,7 @@ import About from './About'
 import MyAccount from './MyAccount'
 import TableGame from './games/TableGame'
 import HangmanGame from './games/HangmanGame'
+import Drag_Drop from './games/Drag_Drop'
 
 const App = ()=> {
     return (
@@ -20,6 +21,7 @@ const App = ()=> {
                 <Route path="/MyAccount" Component={MyAccount}/>
                 <Route path="/games/TableGame" Component={TableGame}/>
                 <Route path="/games/HangmanGame" Component={HangmanGame}/>
+                <Route path="/games/Drag_Drop" Component={Drag_Drop}/>
             </Routes>
         </BrowserRouter>
     )
