@@ -18,9 +18,9 @@ import HangmanImg6 from "./img/hangman-6.svg"
 const Hangman: React.FC = () => {
     
     //* Valores para el efecto confeti
-    const duration = 15 * 1000;
-    const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    const duration = 15 * 1000
+    const animationEnd = Date.now() + duration
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
     
     //*Estados
     let [espacios, setEspacios] = useState<null[]>([])

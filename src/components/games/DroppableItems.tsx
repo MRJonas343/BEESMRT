@@ -23,11 +23,11 @@ const DroppableItem: React.FC<DroppableProps> = ({idDroppableItem, imgDropped, d
 
   useEffect(() => {
     if(hasAnItem){
-      setClassNameArea("bg-white p-4 rounded-lg w-40 h-24 flex justify-center items-center")
+      setClassNameArea("bg-white p-4 rounded-lg w-40 h-24 flex justify-center items-center outline-Pink1 outline lg:w-36 lg:h-36")
       setClassNameP("hidden")
     }else{
-      setClassNameArea("bg-white p-4 rounded-lg w-40 h-24")
-      setClassNameP("font-Secundaria text-sm")
+      setClassNameArea("bg-white p-4 rounded-lg w-40 h-24 outline outline-Yellow3 lg:w-36 lg:h-36")
+      setClassNameP("font-Principal text-lg tracking-wide")
     }
   }, [hasAnItem])
 

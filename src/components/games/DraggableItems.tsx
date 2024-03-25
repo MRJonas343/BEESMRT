@@ -19,7 +19,7 @@ const DraggableItem: React.FC<DraggableItemProps> =({idDraggableItem, draggableI
 
   useEffect(() => {
     if(!shouldDissaperd){
-      setClassNameItem("elevetedButton bg-white/70 rounded-lg flex items-center justify-center w-40 h-24")
+      setClassNameItem("elevetedButton bg-white/70 rounded-lg flex items-center justify-center w-40 h-24 lg:w-36 lg:h-36")
     }else{
       setClassNameItem("hidden")
     }
@@ -36,7 +36,7 @@ const DraggableItem: React.FC<DraggableItemProps> =({idDraggableItem, draggableI
 
   return (
     <div ref={setNodeRef} style={style} {...listeners} {...attributes} className={classNameItem}>
-      <img src={draggableImgSrc} className="w-20 h-20 p-2"/>
+      <img src={draggableImgSrc} className="w-20 h-20 p-2 lg:w-28 lg:h-28"/>
     </div>
   )
 }
