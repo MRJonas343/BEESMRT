@@ -4,7 +4,7 @@ interface ModalProps{
     message : string
     mainMessage : string
     playAgain : () => void
-    showModalWin : () => void
+    showModalWin : () => void | null
 }
 
 const ModalMessage : React.FC <ModalProps> = ({ showModal, imageSrc, message, mainMessage, playAgain, showModalWin}) =>{
@@ -26,6 +26,7 @@ let modalContainer
                 <img className="flex w-72 mx-auto pt-5" src={imageSrc} alt="Message Image" />
                 <div className="flex justify-between pt-4">
                     <button onClick={playAgain} className="bg-blue-700 text-white py-3 px-5 rounded-lg font-Principal2 text-xl">Play Again</button>
+                    
                     <button onClick={showModalWin} className="bg-red-600 text-white py-3 px-10 rounded-lg font-Principal2 text-xl">Close</button>
                 </div>
             </div>
