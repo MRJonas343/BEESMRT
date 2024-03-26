@@ -1,9 +1,9 @@
 import NavBar from "./NavBar"
-// import "./Signin.css"
+import { Link } from "react-router-dom"
 
-const SignIn = () =>{
+const SignIn: React.FC = () =>{
     return (
-        <main className="w-screen h-screen bg-Gradient1">
+        <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
             <NavBar/>
             <div className="flex justify-center">
                 <div className="bg-white rounded-md p-7 mt-8 text-center w-96 shadow-2xl">
@@ -32,13 +32,14 @@ const SignIn = () =>{
                             <button className="border border-black font-Principal text-xl p-2 w-28  hover:bg-yellow-300">REGISTER</button>
                         </div>
                         <div className="Footer-Login">
-                            Do you already have an account?? <br /> <a href="" className="text-indigo-700 font-semibold">Get an Account</a>
+                            Do you already have an account?? <br /> <Link to="/LogIn" className="text-indigo-700 font-semibold">Go to LogIn</Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </main>    
     )
 }
 
 export default SignIn
+
