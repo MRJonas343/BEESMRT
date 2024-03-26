@@ -1,28 +1,64 @@
 import NavBar from "./NavBar"
 import { Link } from "react-router-dom"
+import { useForm } from "react-hook-form"
+import { FacebookLoginButton,TwitterLoginButton } from 'react-social-login-buttons'
 
-const LogIn = () => {
+
+const LogIn: React.FC = () => {
+
+    const { register, formState: { errors }, handleSubmit, reset } = useForm()
+
+    function getForm(data: object) {
+        console.log(data)
+        reset()
+    }
+
+
     return (
         <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
             <NavBar/>
         <div className="flex justify-center">
             <div className="bg-white rounded-md p-7 mt-8 text-center w-96 shadow-2xl">
-                <form>
+                <form onSubmit={handleSubmit(getForm)}>
                     <span className="font-Principal text-3xl">LOGIN</span> <br />
                     <div className="text-left">
                         Email: <br />
-                        <input type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"/>
+                        <input type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2" autoComplete="email"
+                        {...register("email", {
+                            required: true,
+                            pattern: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i
+                        })} />
+                        {
+                            errors.email?.type === "required" &&
+                            <p className="text-red-600">This field is required</p>
+                        }
+                        {
+                            errors.email?.type === "pattern" &&
+                            <p className="text-red-600">This email is not valid</p>
+                        }
                     </div>
                     <div className="text-left pb-4">
                         Password <br />
-                        <input type="password" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"/>
+                        <input type="password" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2" autoComplete="current-password"
+                        {...register("password", {
+                            required: true,
+                            minLength: 8
+                        })} />
+                        {
+                            errors.password?.type === "required" &&
+                            <p className="text-red-600">This field is required</p>
+                        }
+                        {
+                            errors.password?.type === "minLength" &&
+                            <p className="text-red-600">This password is not valid</p>
+                        }
                     </div>
                     <div>
                         <button className="border border-black font-Principal text-xl p-2 w-28 transition duration-300 hover:bg-yellow-300">LOGIN</button>
                     </div>
                     <Link to="/SignIn">
                     <div className="Footer-Login">
-                        Don't you have a account yet? <br /> <a href="" className="text-indigo-700 font-semibold">Get an Account</a>
+                        Don't you have a account yet? <br /> <span className="text-indigo-700 font-semibold">Get an Account</span>
                     </div>
                     </Link>
                 </form>

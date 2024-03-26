@@ -128,6 +128,10 @@ const SignIn: React.FC = () =>{
                             <div className="Footer-Login">
                                 Do you already have an account?? <br /> <Link to="/LogIn" className="text-indigo-700 font-semibold">Go to LogIn</Link>
                             </div>
+                            <div>
+                                <p>Would you like to check the privacy policy?</p>
+                                <Link to="/PrivacyPolicy" className="text-indigo-700 font-semibold">Privacy Policy</Link>
+                            </div>
                         </div>
                     </form>
                 </div>
