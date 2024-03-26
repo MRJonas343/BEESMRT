@@ -1,7 +1,6 @@
 import NavBar from "./NavBar"
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { FacebookLoginButton,TwitterLoginButton } from 'react-social-login-buttons'
 
 
 const LogIn: React.FC = () => {
