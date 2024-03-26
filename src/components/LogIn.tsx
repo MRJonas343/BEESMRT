@@ -1,7 +1,9 @@
 import NavBar from "./NavBar"
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
-
+import { FacebookLoginButton } from "react-social-login-buttons"
+// @ts-ignore
+import { LoginSocialFacebook } from 'reactjs-social-login'
 
 const LogIn: React.FC = () => {
 
@@ -12,9 +14,9 @@ const LogIn: React.FC = () => {
         reset()
     }
 
-
     return (
         <main className="w-screen h-screen bg-Gradient1 overflow-x-hidden">
+            <LoginSocialFacebook></LoginSocialFacebook>
             <NavBar/>
         <div className="flex justify-center">
             <div className="bg-white rounded-md p-7 mt-8 text-center w-96 shadow-2xl">
@@ -61,6 +63,17 @@ const LogIn: React.FC = () => {
                     </div>
                     </Link>
                 </form>
+                <div>
+                <LoginSocialFacebook
+                    appId='7568321253207635' 
+                    onResolve={(response: any) => {
+                    console.log(response);
+                    }}
+                    onReject={(error : any) => console.log(error)}
+                >
+                    <FacebookLoginButton />
+                </LoginSocialFacebook>
+                </div>
             </div>
         </div>
         </main>
