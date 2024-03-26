@@ -65,7 +65,7 @@ const LogIn: React.FC = () => {
                 </form>
                 <div>
                 <LoginSocialFacebook
-                    appId='7568321253207635' 
+                    appId='1563554197766018' 
                     onResolve={(response: any) => {
                     console.log(response);
                     }}
