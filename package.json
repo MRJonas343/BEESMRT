@@ -19,7 +19,8 @@
     "react-hook-form": "^7.51.1",
     "react-router-dom": "^6.21.3",
     "react-social-login-buttons": "^4.1.0",
-    "reactjs-social-login": "^2.6.3"
+    "reactjs-social-login": "^2.6.3",
+    "twitter-api-sdk": "^1.2.1"
   },
   "devDependencies": {
     "@types/canvas-confetti": "^1.6.4",

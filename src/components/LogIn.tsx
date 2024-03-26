@@ -1,17 +1,21 @@
 import NavBar from "./NavBar"
+import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { FacebookLoginButton } from "react-social-login-buttons"
+import { FacebookLoginButton, XLoginButton } from "react-social-login-buttons"
 // @ts-ignore
-import { LoginSocialFacebook } from 'reactjs-social-login'
+import { LoginSocialFacebook, LoginSocialTwitter } from 'reactjs-social-login'
+
 
 const LogIn: React.FC = () => {
 
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm()
 
     function getForm(data: object) {
         console.log(data)
         reset()
+        navigate("/MyAccount")
     }
 
     return (
@@ -67,12 +71,22 @@ const LogIn: React.FC = () => {
                 <LoginSocialFacebook
                     appId='1563554197766018' 
                     onResolve={(response: any) => {
-                    console.log(response);
+                    console.log(response)
+                    navigate("/MyAccount")
                     }}
                     onReject={(error : any) => console.log(error)}
                 >
                     <FacebookLoginButton />
                 </LoginSocialFacebook>
+                </div>
+                <div>
+                <LoginSocialTwitter
+                    consumerKey="al9HcVl6M1NKWEhwY1BRN19xdkM6MTpjaQ"
+                    consumerSecret="afIQjcqN3c2pYTl4s0WfCG6WPbASWuovmsvSFKa_va1IzpGTJB"
+                    onSuccess={console.log("Twitter Success")}
+                    onFailure={console.log("Twitter Failure")}
+                    />
+                <XLoginButton/>
                 </div>
             </div>
         </div>
