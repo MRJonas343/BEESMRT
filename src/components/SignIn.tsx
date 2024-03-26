@@ -29,7 +29,7 @@ const SignIn: React.FC = () =>{
                         <span className="font-Principal text-3xl">Create an Account</span> <br />
                         <div className="text-left">
                             Full Name: <br />
-                            <input type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
+                            <input autoComplete="username" type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
                                 {...register("fullName",{
                                     required: true, 
                                     minLength: 5, 
@@ -56,7 +56,7 @@ const SignIn: React.FC = () =>{
 
                         <div className="text-left">
                             Nick Name: <br />
-                            <input type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
+                            <input className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
                             {...register("nickName",{
                                 required: true, 
                                 minLength: 5, 
@@ -78,7 +78,7 @@ const SignIn: React.FC = () =>{
 
                         <div className="text-left">
                             Email: <br />
-                            <input type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
+                            <input autoComplete="email" type="text" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
                             {...register("email",{
                                 required: true, 
                                 pattern: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/i
@@ -94,7 +94,7 @@ const SignIn: React.FC = () =>{
                         </div>
                         <div className="text-left">
                             Password: <br />
-                            <input type="password" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
+                            <input type="password" autoComplete="new-password" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2"
                             {...register("password",{
                                 required: true, 
                                 minLength: 8, 
@@ -120,8 +120,7 @@ const SignIn: React.FC = () =>{
                         </div>
                         <div className="text-left">
                             Confirm password: <br />
-                            <input type="password" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2" onChange={chekPassword}
-                            />
+                            <input type="password" autoComplete="current-password" className="bg-gray-100 border border-black rounded-md w-full h-9 p-2" onChange={chekPassword}/>
                             <br />
                             <div className="flex justify-center pt-4 pb">
                                 <button className="border border-black font-Principal text-xl p-2 w-28  hover:bg-yellow-300">REGISTER</button>
