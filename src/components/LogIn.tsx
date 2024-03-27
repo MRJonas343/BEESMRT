@@ -2,9 +2,9 @@ import NavBar from "./NavBar"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { FacebookLoginButton, XLoginButton } from "react-social-login-buttons"
+import { FacebookLoginButton, XLoginButton, GithubLoginButton } from "react-social-login-buttons"
 // @ts-ignore
-import { LoginSocialFacebook, LoginSocialTwitter } from 'reactjs-social-login'
+import { LoginSocialFacebook, LoginSocialTwitter, LoginSocialGithub } from 'reactjs-social-login'
 
 
 const LogIn: React.FC = () => {
@@ -16,6 +16,14 @@ const LogIn: React.FC = () => {
         console.log(data)
         reset()
         navigate("/MyAccount")
+    }
+
+    const handleTwitterLogin = (response: any) => {
+        console.log(response) 
+      }
+
+    const handleTwitterError = (error: any) => {
+    console.error(error) 
     }
 
     return (
@@ -79,15 +87,24 @@ const LogIn: React.FC = () => {
                     <FacebookLoginButton />
                 </LoginSocialFacebook>
                 </div>
-                <div>
-                <LoginSocialTwitter
-                    consumerKey="al9HcVl6M1NKWEhwY1BRN19xdkM6MTpjaQ"
-                    consumerSecret="afIQjcqN3c2pYTl4s0WfCG6WPbASWuovmsvSFKa_va1IzpGTJB"
-                    onSuccess={console.log("Twitter Success")}
-                    onFailure={console.log("Twitter Failure")}
-                    />
-                <XLoginButton/>
+
+                <div>                
+                    <LoginSocialTwitter
+                        consumerKey="al9HcVl6M1NKWEhwY1BRN19xdkM6MTpjaQ"
+                        consumerSecret="reAsyVRe37oH2OF4QNOHGlSScJvY8WnHGi01VNr9xQnmsk2wjB"
+                        onSuccess={handleTwitterLogin}
+                        onFailure={handleTwitterError}
+                        >
+                        <XLoginButton/>
+                    </LoginSocialTwitter>
                 </div>
+
+                <div>                
+                    <LoginSocialGithub>
+                        <GithubLoginButton />
+                    </LoginSocialGithub>
+                </div>
+
             </div>
         </div>
         </main>
